@@ -7,7 +7,7 @@ export default class Pricing {
   }
 
   // amount
-  get ampount() {
+  get amount() {
     return this._amount;
   }
 
