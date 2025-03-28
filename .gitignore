@@ -1,0 +1,10 @@
+# directories
+node_modules/
+
+# config files
+*.json
+*config.js
+.eslintrc.js
+
+#main for test
+main.js
