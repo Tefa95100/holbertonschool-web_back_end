@@ -5,7 +5,7 @@ Return a float in a string
 
 
 def to_str(n: float) -> str:
-	"""
+    """
     Return a float in a string
 
     Args:
@@ -14,4 +14,4 @@ def to_str(n: float) -> str:
     Returns:
         str: A float cast in to a string.
     """
-	return str(n)
+    return str(n)
