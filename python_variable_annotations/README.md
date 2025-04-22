@@ -1,0 +1,1 @@
+Project Python - Variable Annotations weekly 04/21/2025
