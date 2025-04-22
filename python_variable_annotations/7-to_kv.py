@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/usr/bin/env python3
 """
 Module contain a function who accep a string and a number
 before return the square of this number in float.
