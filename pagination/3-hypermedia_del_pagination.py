@@ -4,7 +4,6 @@ Deletion-resilient hypermedia pagination
 """
 
 import csv
-import math
 from typing import List, Dict, Any
 
 
@@ -67,7 +66,8 @@ class Server:
         current_index = index
         collected = 0
 
-        while collected < page_size and current_index < len(self.dataset()):
+        while collected < page_size and current_index < max(indexed_dataset.
+                                                            keys()) + 1:
             if current_index in indexed_dataset:
                 data.append(indexed_dataset[current_index])
                 collected += 1
