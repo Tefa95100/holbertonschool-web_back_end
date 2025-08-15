@@ -60,7 +60,7 @@ class Server:
         """
         assert isinstance(index, int) and index >= 0
         indexed_dataset = self.indexed_dataset()
-        assert index < len(self.dataset())
+        assert index < max(indexed_dataset.keys()) + 1
 
         data = []
         current_index = index
