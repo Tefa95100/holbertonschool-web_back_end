@@ -38,8 +38,7 @@ class Server:
             }
         return self.__indexed_dataset
 
-    def get_hyper_index(self, index: int = None,
-                        page_size: int = 10) -> Dict[str, Any]:
+    def get_hyper_index(self, index: int = None, page_size: int = 10) -> Dict[str, Any]:
         """
         Returns a page from the dataset starting from the provided index,
         with deletion resilience.
@@ -60,14 +59,13 @@ class Server:
         """
         assert isinstance(index, int) and index >= 0
         indexed_dataset = self.indexed_dataset()
-        assert index in indexed_dataset or index < max(indexed_dataset.keys()) + 1
+        assert index < len(self.dataset())
 
         data = []
         current_index = index
         collected = 0
 
-        while collected < page_size and current_index < max(indexed_dataset.
-                                                            keys()) + 1:
+        while collected < page_size and current_index < len(self.dataset()):
             if current_index in indexed_dataset:
                 data.append(indexed_dataset[current_index])
                 collected += 1
