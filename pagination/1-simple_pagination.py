@@ -1,10 +1,12 @@
 #!/usr/bin/env python3
 """
 Provides a Server class to paginate data from a CSV file containing
-popular baby names, as well as a helper function for pagination index calculation.
+popular baby names, as well as a helper function for pagination
+index calculation.
 """
 import csv
 from typing import List, Tuple
+
 
 def index_range(page: int, page_size: int) -> Tuple[int, int]:
     """
@@ -68,7 +70,7 @@ class Server:
         """
         assert isinstance(page, int) and page > 0
         assert isinstance(page_size, int) and page_size > 0
-        
+
         start_index, end_index = index_range(page, page_size)
         dataset = self.dataset()
         return dataset[start_index:end_index]
