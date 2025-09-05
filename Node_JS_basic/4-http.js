@@ -1,16 +1,13 @@
-const http = require('node:http');
+const http = require('http');
 
 // Create the server
-http.createServer((request, response) => {
-  // Reception of the request
-  let body = [];
-  request.on('data', (chunk) => {
-    body.push(chunk);
-  }).on('end', () => {
-    body = Buffer.concat(body).toString();
-    // response
-    response.end('Hello Holberton School!');
-  });
-})
+const app = http.createServer((request, response) => {
+  // send response
+  response.statusCode = 200;
+  response.setHeader('Content-type', 'text/html');
+  response.end('Hello Holberton School!');
+});
 // Port to listen
-  .listen(1245);
+app.listen(1245);
+
+module.exports = app;
